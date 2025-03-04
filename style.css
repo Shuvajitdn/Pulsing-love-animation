@@ -1,0 +1,72 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #ffcccc, #ff6666, #ff4040, #cc0000);
+    animation: bg-pulse 6s infinite alternate;
+    overflow: hidden;
+}
+
+/* Heart Container */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Heart Shape */
+.heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #ff4040;
+    border-radius: 50%;
+    margin: 0;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Text Inside Heart */
+.heart > strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 1.8em;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bg-pulse {
+    0% {
+        background: radial-gradient(circle at center, #ffcccc, #ff6666, #ff4040, #cc0000);
+    }
+    100% {
+        background: radial-gradient(circle at center, #ffe6e6, #ff8080, #ff4d4d, #990000);
+    }
+}
